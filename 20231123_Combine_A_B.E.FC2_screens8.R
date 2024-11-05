@@ -35,28 +35,6 @@ Mouse.ortholog_Controls_650 <- read.table("/Volumes/groups/elling/Esther/NGS_res
 Mouse.ortholog_CoreEssentials_934 <- read.table("/Volumes/groups/elling/Esther/NGS_results/Scripts_gene_lists/Mouse.ortholog_CoreEssentials_934.txt", sep = "\t", header = T)
 
 #
-# List for ULI # ---------------------------- 
-mageck_A.B.E.FC2_invivovitro_genes.Uli <- mageck_A.B.E.FC2_invivovitro_genes.standard %>%
-  select(id, neg.lfc.invitro, minRRA.score.invitro, neg.lfc.invivo, minRRA.score.invivo, num.invivo, group) %>%
-  rename(Gene = id, LFC.vitro = neg.lfc.invitro, RRAscore.vitro = minRRA.score.invitro, LFC.vivo = neg.lfc.invivo, RRAscore.vivo = minRRA.score.invivo, UMIs.vivo = num.invivo)
-write.xlsx(mageck_A.B.E.FC2_invivovitro_genes.Uli, '/Volumes/groups/elling/_CRISPR-StAR/mageck_A.B.E.FC2_invivovitro_genes.Uli.xlsx', row.names = FALSE, col.names = TRUE)
-
-Grey.validating.AB.Uli <- mageck_A.B.E.FC2_invivovitro_genes.standard %>% filter(id %in% Grey.validating.AB$id) %>%  select(id, neg.lfc.invitro, minRRA.score.invitro, neg.lfc.invivo, minRRA.score.invivo, num.invivo) %>%
-  rename(Gene = id, LFC.vitro = neg.lfc.invitro, RRAscore.vitro = minRRA.score.invitro, LFC.vivo = neg.lfc.invivo, RRAscore.vivo = minRRA.score.invivo, UMIs.vivo = num.invivo)
-write.xlsx(Grey.validating.AB.Uli, '/Volumes/groups/elling/_CRISPR-StAR/Data_tables/Grey.validating.AB.Uli.xlsx', row.names = FALSE, col.names = TRUE)
-
-A.B.E.FC2_vivo_spec.depleting.vivo1xRRA3.Uli <- A.B.E.FC2_vivo_spec.depleting.vivo1xRRA3 %>%
-  select(id, neg.lfc.invitro, minRRA.score.invitro, neg.lfc.invivo, minRRA.score.invivo, num.invivo, group) %>%
-  rename(Gene = id, LFC.vitro = neg.lfc.invitro, RRAscore.vitro = minRRA.score.invitro, LFC.vivo = neg.lfc.invivo, RRAscore.vivo = minRRA.score.invivo, UMIs.vivo = num.invivo)
-write.xlsx(A.B.E.FC2_vivo_spec.depleting.vivo1xRRA3.Uli, '/Volumes/groups/elling/_CRISPR-StAR/Data_tables/A.B.E.FC2_vivo_spec.depleting.vivo1xRRA3.Uli.xlsx', row.names = FALSE, col.names = TRUE)
-
-A.B.E.FC2_vitro.vivo.moving.genes.1.Uli <- A.B.E.FC2_vitro.vivo.moving.genes.1 %>%
-  select(id, neg.lfc.invitro, minRRA.score.invitro, neg.lfc.invivo, minRRA.score.invivo, num.invivo, group) %>%
-  rename(Gene = id, LFC.vitro = neg.lfc.invitro, RRAscore.vitro = minRRA.score.invitro, LFC.vivo = neg.lfc.invivo, RRAscore.vivo = minRRA.score.invivo, UMIs.vivo = num.invivo)
-write.xlsx(A.B.E.FC2_vitro.vivo.moving.genes.1.Uli, '/Volumes/groups/elling/_CRISPR-StAR/Data_tables/A.B.E.FC2_vitro.vivo.moving.genes.1.Uli.xlsx', row.names = FALSE, col.names = TRUE)
-
-
-#
 
 # VITRO # ---------- A.B.E_FC2  guide - load data ------------------ 
 FC1.reads.i.a.A <-read.table("/Volumes/groups/elling/Esther/NGS_results/Screen_results/20210816_Yumm_allApools_invivovitro_screen/FC1.reads.i.a.txt",header = T, sep = "\t")
